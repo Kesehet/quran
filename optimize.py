@@ -9,6 +9,13 @@ def optimize_image(image_path, output_path, size=(800, 800), quality=85):
         img.thumbnail(size)
         img.save(output_path, quality=quality)
 
+# Function to convert an image to WebP
+def convert_to_webp(image_path, output_path, quality=90):
+    with Image.open(image_path) as img:
+        img.save(output_path, format='webp', quality=quality)
+
+
+
 # Directory containing images
 image_dir = "tajweed-quran"
 output_dir = "optimize-tajweed-quran"
